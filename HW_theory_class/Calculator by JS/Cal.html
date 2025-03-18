@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="Cal.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="expression" id="expression"></div>
+            <div class="result" id="result">0</div>
+        </div>
+        
+        <div class="mode-selector">
+            <button class="mode-btn active" id="basic-mode">Basic</button>
+            <button class="mode-btn" id="scientific-mode">Scientific</button>
+            <button class="mode-btn" id="calculus-mode">Calculus</button>
+            <button class="mode-btn" id="equations-mode">Equations</button>
+        </div>
+        
+        <!-- Basic Calculator Keypad -->
+        <div class="keypad" id="basic-keypad">
+            <button class="btn clear" data-action="clear">C</button>
+            <button class="btn" data-action="backspace">⌫</button>
+            <button class="btn operator" data-action="percent">%</button>
+            <button class="btn operator" data-action="divide">÷</button>
+            
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn operator" data-action="multiply">×</button>
+            
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn operator" data-action="subtract">−</button>
+            
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn operator" data-action="add">+</button>
+            
+            <button class="btn" data-action="negate">±</button>
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+            <button class="btn equals" data-action="calculate">=</button>
+        </div>
+        
+        <!-- Scientific Calculator Keypad (Hidden by default) -->
+        <div class="scientific-keypad" id="scientific-keypad">
+            <button class="btn function" data-action="sin">sin</button>
+            <button class="btn function" data-action="cos">cos</button>
+            <button class="btn function" data-action="tan">tan</button>
+            <button class="btn function" data-action="log">log</button>
+            <button class="btn function" data-action="ln">ln</button>
+            
+            <button class="btn function" data-action="asin">sin⁻¹</button>
+            <button class="btn function" data-action="acos">cos⁻¹</button>
+            <button class="btn function" data-action="atan">tan⁻¹</button>
+            <button class="btn function" data-action="pow">^</button>
+            <button class="btn function" data-action="sqrt">√</button>
+            
+            <button class="btn function" data-action="pi">π</button>
+            <button class="btn function" data-action="e">e</button>
+            <button class="btn function" data-value="(">(</button>
+            <button class="btn function" data-value=")">)</button>
+            <button class="btn function" data-action="factorial">x!</button>
+        </div>
+        
+        <!-- Calculus Keypad (Hidden by default) -->
+        <div class="calculus-keypad" id="calculus-keypad">
+            <button class="btn function" data-action="derivative">d/dx</button>
+            <button class="btn function" data-action="integral">∫</button>
+            <button class="btn function" data-action="limit">lim</button>
+            <button class="btn function" data-action="sum">Σ</button>
+            
+            <button class="btn function" data-action="x-var">x</button>
+            <button class="btn function" data-action="y-var">y</button>
+            <button class="btn function" data-action="z-var">z</button>
+            <button class="btn function" data-action="function">f(x)</button>
+        </div>
+        
+        <!-- Differential Equations Keypad (Hidden by default) -->
+        <div class="eq-keypad" id="eq-keypad">
+            <button class="btn function" data-action="solve-eq">Solve</button>
+            <button class="btn function" data-action="sys-eq">System</button>
+            <button class="btn function" data-action="diff-eq">Diff Eq</button>
+            <button class="btn function" data-action="graph">Graph</button>
+            
+            <button class="btn function" data-action="matrix">Matrix</button>
+            <button class="btn function" data-action="vector">Vector</button>
+            <button class="btn function" data-action="eigenvalue">Eigen</button>
+            <button class="btn function" data-action="laplace">Laplace</button>
+        </div>
+    </div>
+    
+    <!-- History Panel -->
+    <div class="history-panel" id="history-panel">
+        <div class="history-title">Calculation History</div>
+        <div id="history-content"></div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+        let variable = '';
+        let expression = '';        // stack for expression
+        let temp1 = 0;
+        let temp2 = 0;
+        let history = [];           // stack for history
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.getAttribute('data-value');
+                if(value !== null) {
+                    variable += value;
+                }
+                document.querySelector('#result').textContent = variable;
+                console.log(variable);
+                switch (button.getAttribute('data-action')) {
+                    case 'clear':
+                        // Clear the display
+                        document.querySelector('#result').textContent = '0';
+                        variable = '0';
+                        break;
+                    case 'backspace':
+                        // Remove the last character from the display
+                        variable = variable.slice(0, -1);
+                        break;
+                    case 'percent':
+                        // Calculate the percentage of the value
+                        expression = '%';
+                        temp1 = parseInt(variable)/100;
+                        variable = temp1.toString();
+                        console.log(temp1);
+                        break;
+                    case 'divide':
+                        // Perform division operation
+                        
+                        break;
+                    case 'multiply':
+                        // Perform multiplication operation
+                        
+                        break;
+                    case 'subtract':
+                        // Perform subtraction operation
+                        
+                        break;
+                    case 'add':
+                        // Perform addition operation
+                        
+                        break;
+                    case 'negate':
+                        // Negate the value (change sign)
+                        
+                        break;
+                    case 'calculate':
+                        // Calculate the result of the expression
+                        
+                        break;
+                    default:
+                        break;
+                }
+                document.querySelector('#result').textContent = variable;
+                document.querySelector('#expression').textContent = expression;
+            });
+            
+        });
+    </script>
+</body>
+</html>

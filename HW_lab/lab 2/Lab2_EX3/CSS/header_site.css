@@ -1,0 +1,96 @@
+body {
+    background-color: #111111;
+    color: #ebebeb;
+    font-size: 125%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.content {
+    margin-bottom: 2rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+    margin-top: 4rem;
+    line-height: 1.3;
+}
+
+.site-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.site-nav {
+    display: flex;
+    max-width: 80rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-family: var(--font-mono);
+}
+
+.site-nav a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+.site-nav .logo {
+    font-weight: bold;
+    padding-left: 0;
+}
+  
+.main-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #27272a;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+@media screen and (max-width: 40rem) {
+    .site-nav,
+    .main-menu {
+      flex-direction: column;
+    }
+  
+    .site-nav a {
+      padding: 0.5rem;
+      padding-left: 0;
+    }
+}
+
+.name-place-contact {
+    display: flex;
+    flex-direction: column;
+    gap : 0.5rem;
+}
+
+.name-contact {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.placeholder {
+    width: 100%;
+    height: auto;
+}
+
