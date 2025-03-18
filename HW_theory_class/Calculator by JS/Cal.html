@@ -9,6 +9,7 @@
 <body>
     <div class="calculator">
         <div class="display">
+            <div class="history" id="history"></div>
             <div class="expression" id="expression"></div>
             <div class="result" id="result">0</div>
         </div>
@@ -102,70 +103,6 @@
         <div id="history-content"></div>
     </div>
 
-    <script>
-        const buttons = document.querySelectorAll('.btn');
-        let variable = '';
-        let expression = '';        // stack for expression
-        let temp1 = 0;
-        let temp2 = 0;
-        let history = [];           // stack for history
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const value = button.getAttribute('data-value');
-                if(value !== null) {
-                    variable += value;
-                }
-                document.querySelector('#result').textContent = variable;
-                console.log(variable);
-                switch (button.getAttribute('data-action')) {
-                    case 'clear':
-                        // Clear the display
-                        document.querySelector('#result').textContent = '0';
-                        variable = '0';
-                        break;
-                    case 'backspace':
-                        // Remove the last character from the display
-                        variable = variable.slice(0, -1);
-                        break;
-                    case 'percent':
-                        // Calculate the percentage of the value
-                        expression = '%';
-                        temp1 = parseInt(variable)/100;
-                        variable = temp1.toString();
-                        console.log(temp1);
-                        break;
-                    case 'divide':
-                        // Perform division operation
-                        
-                        break;
-                    case 'multiply':
-                        // Perform multiplication operation
-                        
-                        break;
-                    case 'subtract':
-                        // Perform subtraction operation
-                        
-                        break;
-                    case 'add':
-                        // Perform addition operation
-                        
-                        break;
-                    case 'negate':
-                        // Negate the value (change sign)
-                        
-                        break;
-                    case 'calculate':
-                        // Calculate the result of the expression
-                        
-                        break;
-                    default:
-                        break;
-                }
-                document.querySelector('#result').textContent = variable;
-                document.querySelector('#expression').textContent = expression;
-            });
-            
-        });
-    </script>
+    <script src="Cal.js"></script>
 </body>
 </html>
