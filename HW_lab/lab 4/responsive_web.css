@@ -1,0 +1,58 @@
+.header {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    border: solid 1px #000000;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.mini-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.nav-list {
+    align-self: cross-end;
+}
+
+.nav-link {
+    padding: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 400px) {
+    .navbar {
+        flex-flow: column nowrap;
+    }
+
+    .mini-logo {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .mini-logo h1 {
+        font-size: 0.5em;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .nav-link {
+        font-size: 0.7em;
+    }
+    
+}
