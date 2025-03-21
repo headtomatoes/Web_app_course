@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .handwritten {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .border-custom {
+            border: 1px solid #000 !important;
+        }
+        
+        .border-right-custom {
+            border-right: 1px solid #000 !important;
+        }
+        
+        .border-bottom-custom {
+            border-bottom: 1px solid #000 !important;
+        }
+        
+        .border-top-custom {
+            border-top: 1px solid #000 !important;
+        }
+        
+        .profile-link {
+            color: blue;
+            text-decoration: none;
+        }
+        
+        .profile-link:hover {
+            text-decoration: underline;
+        }
+        
+        .logo-square {
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            border-radius: 4px;
+        }
+        
+        /* Override Bootstrap card styles */
+        .review-card {
+            border-radius: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .border-right-md-custom {
+                border-right: none !important;
+                border-bottom: 1px solid #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container border-custom">
+        <!-- Header -->
+        <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center p-3 border-bottom-custom">
+            <div class="d-flex align-items-center mb-3 mb-md-0">
+                <div class="logo-square me-2"></div>
+                <span>your name</span>
+            </div>
+            <nav>
+                <ul class="list-unstyled d-flex mb-0">
+                    <li><a href="#">Home</a></li>
+                    <li class="ms-3 ps-1 position-relative"><span class="position-absolute" style="left: -5px;">/</span> <a href="#">Projects</a></li>
+                    <li class="ms-3 ps-1 position-relative"><span class="position-absolute" style="left: -5px;">/</span> <a href="#">Articles</a></li>
+                    <li class="ms-3 ps-1 position-relative"><span class="position-absolute" style="left: -5px;">/</span> <a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="py-5 text-center border-bottom-custom">
+            <h1 class="display-5 mb-2 handwritten">Frontend Developer</h1>
+            <p class="text-muted">html only with proper layout, no styling</p>
+        </section>
+
+        <!-- Main Content -->
+        <div class="row g-0">
+            <!-- Projects Sidebar -->
+            <div class="col-md-3 p-3 border-right-custom border-right-md-custom">
+                <h2 class="h4 mb-3 handwritten">Projects</h2>
+                <ul class="list-unstyled">
+                    <li class="border-custom p-2 mb-2">HTML Only Portfolio</li>
+                    <li class="border-custom p-2 mb-2">Calculator</li>
+                    <li class="border-custom p-2 mb-2">Quiz App</li>
+                    <li class="border-custom p-2 mb-2">Countdown Timer</li>
+                    <li class="border-custom p-2 mb-2">Product Upcoming Page</li>
+                </ul>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="col-md-4 p-3 border-right-custom">
+                <h2 class="h4 mb-3 handwritten">Work Experience</h2>
+                <p class="mb-1">readmap.sh</p>
+                <p>Solved all the frontend projects</p>
+                <a href="#" class="profile-link">Visit my Profile</a>
+
+                <div class="mt-4 pt-3 border-top">
+                    <h3 class="h5">OpenSource Work</h3>
+                    <p>Contributed to 50 opensource projects. Made my own projects with 200 GitHub Stars.</p>
+                    <a href="#" class="profile-link">Visit my GitHub Profile</a>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="col-md-5 p-3">
+                <h2 class="h4 mb-3 handwritten">Education</h2>
+                <p>Graduated with 3.76 out of 4 CGPA. Won Acme Hackathon. Organized 30 sessions.</p>
+                
+                <p class="mb-2">Courses I took:</p>
+                <ul class="list-unstyled mb-0">
+                    <li>- Object Oriented Programming</li>
+                    <li>- Data Structures and Algorithms</li>
+                    <li>- Web Engineering</li>
+                    <li>- Artificial Intelligence</li>
+                    <li>- Human Computer Interaction</li>
+                    <li>- Computer Graphics</li>
+                    <li>- Database Management Systems</li>
+                    <li>- Distributed Database Systems</li>
+                    <li>- Discreet Mathematics</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <section class="p-3 border-top-custom">
+            <h2 class="h4 mb-4 handwritten">Reviews from my Teachers</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 border-custom review-card">
+                        <div class="card-body">
+                            <p class="card-text">John doe was a brilliant student; always stood out with his assignments.</p>
+                            <div class="text-muted">
+                                <p class="mb-0">Jane Doe</p>
+                                <p class="mb-0">Assistant Professor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card h-100 border-custom review-card">
+                        <div class="card-body">
+                            <p class="card-text">John doe was a brilliant student; always stood out with his assignments.</p>
+                            <div class="text-muted">
+                                <p class="mb-0">Jane Doe</p>
+                                <p class="mb-0">Assistant Professor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-custom review-card">
+                        <div class="card-body">
+                            <p class="card-text">John doe was a brilliant student; always stood out with his assignments.</p>
+                            <div class="text-muted">
+                                <p class="mb-0">Jane Doe</p>
+                                <p class="mb-0">Assistant Professor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="p-3 text-center border-top-custom">
+            <p class="mb-0 handwritten">© all rights reserved 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,59 +1,111 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Web</title>
+    <title>Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="responsive_web.css">
-    <link rel="icon" href="logo.png" type="image/png">
-    <link href="" rel="stylesheet"> <!-- font family -->
-
 </head>
-
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="mini-logo">
-                <div class="logo">
-                    <img src="logo.png" alt="logo">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-square"></div>
+                <div>your name</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Frontend Developer</h1>
+            <p>html only with proper layout, no styling</p>
+        </section>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h2>Projects</h2>
+                <ul class="project-list">
+                    <li>HTML Only Portfolio</li>
+                    <li>Calculator</li>
+                    <li>Quiz App</li>
+                    <li>Countdown Timer</li>
+                    <li>Product Upcoming Page</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="work-experience">
+                    <h2>Work Experience</h2>
+                    <p>readmap.sh</p>
+                    <p>Solved all the frontend projects</p>
+                    <a href="#" class="profile-link">Visit my Profile</a>
+
+                    <div class="opensource">
+                        <h3>OpenSource Work</h3>
+                        <p>Contributed to 50 opensource projects. Made my own projects with 200 GitHub Stars.</p>
+                        <a href="#" class="profile-link">Visit my GitHub Profile</a>
+                    </div>
                 </div>
-                <div class="logo-text">
-                    <p>Dam Nguyen Trong Le</p>
-                </div>       
             </div>
-            <div class="nav-list">
-                <a class="nav-link" href="#">Home /</a>
-                <a class="nav-link" href="#">Projects /</a>
-                <a class="nav-link" href="#">Articles /</a>
-                <a class="nav-link" href="#">Contact /</a>
-            </div>
-        </nav>
-        <h1>Responsive Web</h1>
-    </header>
 
-    <main>
-        <section class="">
-            <div>col1</div>
-            <div>col1
-                <div>row1</div>
-                <div>row2</div>
+            <div class="content">
+                <div class="education">
+                    <h2>Education</h2>
+                    <p>Graduated with 3.76 out of 4 CGPA. Won Acme Hackathon. Organized 30 sessions.</p>
+                    
+                    <p>Courses I took:</p>
+                    <ul class="course-list">
+                        <li>Object Oriented Programming</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Web Engineering</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Human Computer Interaction</li>
+                        <li>Computer Graphics</li>
+                        <li>Database Management Systems</li>
+                        <li>Distributed Database Systems</li>
+                        <li>Discreet Mathematics</li>
+                    </ul>
+                </div>
             </div>
-            <div>col1</div>
-        </section>
-        <section>
-            <div>row1</div>
-            <div>row2
-                <div>col1</div>
-                <div>col2</div>
-                <div>col3</div>
-            </div>
-        </section>
-    </main>
+        </div>
 
-    <footer>
-        <p>&copy; all right reserved 2025</p>
-    </footer>
+        <section class="reviews">
+            <h2>Reviews from my Teachers</h2>
+            <div class="review-cards">
+                <div class="review-card">
+                    <p>John doe was a brilliant student; always stood out with his assignments.</p>
+                    <div class="reviewer">
+                        <p>Jane Doe</p>
+                        <p>Assistant Professor</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>John doe was a brilliant student; always stood out with his assignments.</p>
+                    <div class="reviewer">
+                        <p>Jane Doe</p>
+                        <p>Assistant Professor</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>John doe was a brilliant student; always stood out with his assignments.</p>
+                    <div class="reviewer">
+                        <p>Jane Doe</p>
+                        <p>Assistant Professor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © all rights reserved 2025
+        </footer>
+    </div>
 </body>
-
 </html>
