@@ -17,6 +17,20 @@
             margin: 0 auto;
             padding: 20px;
         }
+        form {
+            margin: 10px 0;
+            border-top: solid 1px #000000;
+            padding: 10px 0;
+        }
+
+        h3 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .submit {
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 <body>
@@ -38,39 +52,9 @@
                     </label>
                 </div> 
             </div>
-            <button type="submit" id="submit" style="display: none;">Submit your answers</button>
+            <button type="submit" class="submit" id="submit" style="display: none;">Submit your answers</button>
         </form>
     </div>
-    <script>
-        function getElement(selector) { 
-            return document.querySelector(selector);
-        }
-        const form = getElement('#hiddenForm');
-        const submitButton = getElement('#submit');
-        const notification = getElement('#notification');
-        function startCountdown() {
-            form.style.display = 'block';
-            let count = 1;
-            let interval = setInterval(function() {
-                count--;
-                let minutes = Math.floor(count / 60);
-                let seconds = count % 60;
-                getElement('#countdown').textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                if (count <= 0) {
-                    clearInterval(interval);
-                    form.style.display = 'none';
-                    getElement('#start').style.display = 'none';
-                    notification.style.display = 'block';
-                    submitButton.style.display = 'block';
-                }
-            }, 1000);
-        }
-
-        
-        document.addEventListener("DOMContentLoaded", () => {
-            // specify the function that's run when the Join button is clicked
-            getElement("#start").addEventListener("click", startCountdown);
-        });
-    </script>
+    <script src = "EX2.js"></script>
 </body>
 </html>
