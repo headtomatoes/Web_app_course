@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz challenge</title>
+    <style>
+        /* CSS Placeholder */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Challenge</h1>
+        <button id="start">Starting counting down <span id="countdown">1:00</span> [mm:ss]</button>
+        <form>
+            <h3 id="notification" style="display: none;">Time is up!!!</h3>
+            <div id="hiddenForm" style="display: none;">
+                <div>
+                    <label for="question1">Question 1: How many people are there in your class?
+                        <input type="text" id="question1" name="question1" placeholder="0" required>
+                    </label>
+                </div> 
+                <div>
+                    <label for="question2">Question 2: How do you feel now?
+                        <input type="radio" id="question2" name="question2" value="good" required> Good
+                        <input type="radio" id="question2" name="question2" value="bad" required> Bad
+                    </label>
+                </div> 
+            </div>
+            <button type="submit" id="submit" style="display: none;">Submit your answers</button>
+        </form>
+    </div>
+    <script>
+        function getElement(selector) { 
+            return document.querySelector(selector);
+        }
+        const form = getElement('#hiddenForm');
+        const submitButton = getElement('#submit');
+        const notification = getElement('#notification');
+        function startCountdown() {
+            form.style.display = 'block';
+            let count = 1;
+            let interval = setInterval(function() {
+                count--;
+                let minutes = Math.floor(count / 60);
+                let seconds = count % 60;
+                getElement('#countdown').textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                if (count <= 0) {
+                    clearInterval(interval);
+                    form.style.display = 'none';
+                    getElement('#start').style.display = 'none';
+                    notification.style.display = 'block';
+                    submitButton.style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            // specify the function that's run when the Join button is clicked
+            getElement("#start").addEventListener("click", startCountdown);
+        });
+    </script>
+</body>
+</html>

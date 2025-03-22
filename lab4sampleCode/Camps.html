@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <TITLE>Camps on K-3</TITLE>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+
+function hideCamps() {
+  // Netscape 4 document model.
+  document.layers["baseCamp"].visibility = "hidden";
+  document.layers["highCamp"].visibility = "hidden";
+  // Or document.baseCamp.visibility = "hidden";
+}
+
+function moveBaseCamp() {
+  baseCamp.moveBy(1, 3);
+  if (baseCamp.pageX < 130) {
+    setTimeout("moveBaseCamp()", 10);
+  }
+}
+// Hide camps, position base camp near top-left corner,
+// make it visible, then have it slowly drift down to
+// final position.
+
+function showBaseCamp() {
+  hideCamps();
+  baseCamp =  document.layers["baseCamp"];
+  baseCamp.moveToAbsolute(0, 20);
+  baseCamp.visibility = "show";
+  moveBaseCamp();
+}
+
+function moveHighCamp() {
+  highCamp.moveBy(2, 1);
+  if (highCamp.pageX < 110) {
+    setTimeout("moveHighCamp()", 10);
+  }
+}
+
+// Hide camps, position high camp near top-left corner,
+// make it visible, then have it slowly drift down to
+// final position.
+
+function showHighCamp() {
+  hideCamps();
+  highCamp =  document.layers["highCamp"];
+  highCamp.moveToAbsolute(0, 65);
+  highCamp.visibility = "show";
+  moveHighCamp();
+}
+
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+
+<IMG SRC="images/peak4.gif" WIDTH=511 HEIGHT=600 ALIGN="LEFT">
+<H1>Camps on K-3</H1>
+The High Peaks Tours trip to the summit:
+<UL>
+  <LI>Day 1: Travel to Base Camp
+  <LI>Day 2: Climb to High Camp
+  <LI>Day 3: Ascend summit, return to High Camp
+  <LI>Day 4: Descend to Base Camp
+  <LI>Day 5: Return Home
+</UL>
+<BR CLEAR="ALL">
+
+<!--           LAYER only supported Netscape 4           -->
+<LAYER id="highCamp" PAGEX=50 PAGEY=100 VISIBILITY="hidden">
+  <TABLE>
+    <TR><TH BGCOLOR="WHITE" WIDTH=50>
+        <FONT SIZE="+2">High Camp</FONT>
+        <TD><IMG SRC="images/Arrow-Right.gif">
+  </TABLE>
+</LAYER>
+
+<!--           LAYER only supported Netscape 4           -->
+<LAYER id="baseCamp" PAGEX=50 PAGEY=100 VISIBILITY="hidden">
+  <TABLE>
+    <TR><TH BGCOLOR="WHITE" WIDTH=50>
+        <FONT SIZE="+3">Base Camp</FONT>
+        <TD><IMG SRC="images/Arrow-Right.gif">
+  </TABLE>
+</LAYER>
+
+<FORM>
+  <INPUT TYPE="Button" VALUE="Show Base Camp"
+         onClick="showBaseCamp()">
+  <INPUT TYPE="Button" VALUE="Show High Camp"
+         onClick="showHighCamp()">
+  <INPUT TYPE="Button" VALUE="Hide Camps"
+         onClick="hideCamps()">
+</FORM>
+
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Register for an Account</h1>
+        <div id="error_message"></div>
+        <form id="register_form" name="register_form" action="register.html" method="post">
+            <div>
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email" required>
+                <span id="error">*</span>
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span id="error">*</span>
+            </div>
+            <div>
+                <label for="country">Country:</label> 
+                <select id="country" name="country" required>
+                    <option value="">Select a country</option>
+                    <option value="CA">Canada</option>
+                    <option value="US">United States</option>
+                    <option value="MX">Mexico</option>
+                </select>
+                <span id="error">*</span>
+            </div>
+            <div>
+                <label for="contact">How do you want to be contacted?</label>
+                <input type="radio" id="contact_text" name="contact" value="text" required>
+                <label for="contact_text">Text</label>
+                <input type="radio" id="contact_email" name="contact" value="email" required>
+                <label for="contact_email">Email</label>
+                <input type="radio" id="contact_none" name="contact" value="none" required>
+                <label for="contact_none">Don't contact me</label>
+            </div>
+            <div>
+                <label for="terms">Terms and Conditions:</label>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I accept </label>
+                <span id="error">*</span>
+            </div>
+            <button type="submit" id="register_button" value="register">Register</button>
+            <button type="reset" id="reset_button" value="reset">Reset</button>
+        </form>
+    </main>
+    <footer></footer>
+    <script src="EX1.js"></script>
+</body>
+</html>
